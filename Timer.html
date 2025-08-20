@@ -1,0 +1,80 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        p#ans {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+
+        input[type="button"] {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="ans">0</p>
+    <input type="button" value="Start" onclick="start()">
+    <input type="button" value="Stop" onclick="stop()">
+    <input type="button" value="Pause" onclick="pause()">
+
+    <script>
+        var i = 0;
+        var mytimer = "";
+
+        function demo() {
+            i = i + 1;
+            document.getElementById("ans").innerHTML = i;
+            console.log(i);
+        }
+
+        function start() {
+            mytimer = setInterval(demo, 1000);
+        }
+
+        function pause() {
+            clearInterval(mytimer);
+        }
+
+        function stop() {
+            i = 0;
+            document.getElementById("ans").innerHTML = 0;
+            clearInterval(mytimer);
+        }
+    </script>
+
+</body>
+</html>
+
+
